@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <link
+        href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSlpStGkXAn_9npMB4sNZIhsVWaxfCouRyDXtm0JHfbTV69iwJ1FxHMJKCG86Wsqivmyt0&usqp=CAU"
+        rel="icon">
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+
+    <link
+        href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+        rel="stylesheet">
+
+    <link href="assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+    <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+    <link href="assets/css/style.css" rel="stylesheet">
+    <style>
+        .containers {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 2em;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            flex: 1;
+        }
+
+        th,
+        td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        th {
+            background-color: #3fbbc0;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        .confirm-btn {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .confirm-btn:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="cursor"></div>
+
+    <div id="topbar" class="d-flex align-items-center fixed-top">
+        <div class="container d-flex align-items-center justify-content-center justify-content-md-between">
+            <div class="align-items-center d-none d-md-flex">
+                <i class="bi bi-clock"></i> Monday - Saturday, 8AM to 10PM
+            </div>
+            <div class="d-flex align-items-center">
+                <i class="bi bi-phone"></i> Call us now +91 1234567890
+            </div>
+        </div>
+    </div>
+
+    <header id="header" class="fixed-top mb-5">
+        <div class="container d-flex align-items-center">
+
+            <a href="index.html" class="logo me-auto "><img
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSlpStGkXAn_9npMB4sNZIhsVWaxfCouRyDXtm0JHfbTV69iwJ1FxHMJKCG86Wsqivmyt0&usqp=CAU"
+                    alt="error" width=" 130px" height="200px" class="img-fluid"></a>
+
+
+            <nav id="navbar" class="navbar order-last order-lg-0">
+                <ul>
+                    <li><a class="nav-link scrollto " href="index.html">Home</a></li>
+                    <li><a class="nav-link scrollto" href="index.html#about">About</a></li>
+                    <li><a class="nav-link scrollto" href="index.html#services">Services</a></li>
+
+                    <li><a class="nav-link scrollto" href="index.html#doctors">Doctors</a></li>
+
+                    <li><a class="nav-link scrollto" href="index.html#contact">Contact</a></li>
+                </ul>
+                <i class="bi bi-list mobile-nav-toggle"></i>
+            </nav>
+
+            <a href="appoinment.html" class="appointment-btn scrollto"><span class="d-none d-md-inline">Make an</span>
+                Appointment</a>
+
+        </div>
+    </header>
+
+
+    <div id="main">
+        <section id="appointment" class="appointment section-bg" style="margin-top: 6.5em">
+            <div class="container" data-aos="fade-up">
+                <div class="section-title">
+                    <h2>Make an Appointment</h2>
+                    <p>
+                        Visit our website and click on the "Book Appointment" button. Fill
+                        out the required information, including your name, contact
+                        details, preferred date and time, and the department or doctor you
+                        wish to see. Our team will confirm your appointment via email or
+                        phone.
+                    </p>
+                </div>
+
+                <form action="#" method="post" enctype="text/plain" class="php-email-form" data-aos="fade-up"
+                    data-aos-delay="100">
+                    <div class="row">
+                        <div class="col-md-4 form-group">
+                            <input type="text" name="name" class="form-control" id="name" placeholder="Your Name"
+                                required />
+                        </div>
+                        <div class="col-md-4 form-group mt-3 mt-md-0">
+                            <input type="email" class="form-control" name="email" id="email" placeholder="Your Email"
+                                required />
+                        </div>
+                        <div class="col-md-4 form-group mt-3 mt-md-0">
+                            <input type="tel" class="form-control" name="phone" id="phone" placeholder="Your Phone"
+                                required />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4 form-group mt-3">
+                            <input type="date" name="date" class="form-control datepicker" id="date"
+                                placeholder="Appointment Date" required />
+                        </div>
+                        <div class="col-md-4 form-group mt-3">
+                            <select id="department" onchange="updateDoctorList()" class="form-select">
+                                <option value="select department" disabled selected>
+                                    Select Department
+                                </option>
+                                <option value="Cardiology">Cardiology</option>
+                                <option value="Orthopedics">Orthopedics</option>
+                                <option value="Pediatrics">Pediatrics</option>
+                            </select>
+                        </div>
+                        <div class="col-md-4 form-group mt-3" onclick="showAppointmentSlots()">
+                            <select id="doctor" class="form-select"></select>
+                        </div>
+                    </div>
+
+                    <div class="form-group mt-3">
+                        <textarea class="form-control" name="message" rows="5"
+                            placeholder="Message (Optional)"></textarea>
+                    </div>
+                    <div class="my-3">
+                        <div class="loading">Loading</div>
+                        <div class="error-message"></div>
+                        <div class="sent-message">
+                            Your appointment request has been sent successfully. Thank you!
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <button type="submit">
+                            Make an Appointment
+                        </button>
+                    </div>
+                </form>
+                <div class="containers">
+                    <form id="tableForm">
+                        <table id="timeSlotsTable" style="display: none">
+                            <thead>
+                                <tr>
+                                    <th>Doctor Name</th>
+                                    <th>Time Slot</th>
+                                    <th>Confirm</th>
+                                </tr>
+                            </thead>
+                            <tbody id="timeSlotsBody">
+                            </tbody>
+                        </table>
+                    </form>
+                </div>
+            </div>
+            <div id="message" style="text-align: center; margin-top: 4%; font-size: larger"></div>
+        </section>
+    </div>
+
+    <footer id="footer">
+        <div class="footer-top">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-3 col-md-6">
+                        <div class="footer-info">
+                            <h3>Shaligram</h3>
+                            <p>
+                                Patelpark, <br>
+                                ranjit sagar Road, Jamnagar<br><br>
+                                <strong>Phone:</strong> +91 1234567890<br>
+                                <strong>Email:</strong> shaligram@gmail.com<br>
+                            </p>
+                            <div class="social-links mt-3">
+                                <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+                                <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+                                <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+                                <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+                                <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-2 col-md-6 footer-links">
+                        <h4>Useful Links</h4>
+                        <ul>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 footer-links">
+                        <h4>Our Services</h4>
+                        <ul>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Web Design</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Web Development</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Product Management</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Marketing</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Graphic Design</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 footer-newsletter">
+                        <h4>Our Newsletter</h4>
+                        <p>Company Name NP Devloper jamnagar</p>
+                        <form action="" method="post">
+                            <input type="email" name="email"><input type="submit" value="Subscribe">
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="copyright">
+                &copy; Copyright <strong><span>Shaligram</span></strong>. All Rights Reserved
+            </div>
+            <div class="credits">
+                Designed by <a href="E:\sem3\PROTFOLIO\index.html">Nit Sanghani</a>
+            </div>
+        </div>
+    </footer>
+
+
+
+    <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+    <script src="assets/vendor/aos/aos.js"></script>
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="assets/vendor/php-email-form/validate.js"></script>
+
+
+    <script src="assets/js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const form = document.querySelector('form.php-email-form');
+            form.addEventListener('submit', function (event) {
+                event.preventDefault();
+                checkAvailability();
+            });
+        });
+    </script>
+
+    <script>
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const form = document.querySelector('form.php-email-form');
+            form.addEventListener('submit', function (event) {
+                event.preventDefault();
+                storeAppointmentData();
+            });
+        });
+
+        function storeAppointmentData() {
+            const formData = new FormData(document.querySelector('form.php-email-form'));
+            const appointmentData = {};
+            formData.forEach((value, key) => {
+                appointmentData[key] = value;
+            });
+            localStorage.setItem('appointmentData', JSON.stringify(appointmentData));
+            window.location.href = 'success.html';
+
+        }
+
+        var availableDoctors = {
+            Cardiology: ["Dr. Smith", "Dr. Johnson"],
+            Orthopedics: ["Dr. Brown", "Dr. Martinez"],
+            Pediatrics: ["Dr. Williams", "Dr. Garcia"],
+        };
+
+        function updateDoctorList() {
+            var department = document.getElementById("department").value;
+            var doctorSelect = document.getElementById("doctor");
+            doctorSelect.innerHTML = ""; // Clear previous options
+
+            // Populate the doctor dropdown with options based on the selected department
+            var doctors = availableDoctors[department];
+            if (doctors) {
+                for (var i = 0; i < doctors.length; i++) {
+                    var option = document.createElement("option");
+                    option.text = doctors[i];
+                    doctorSelect.add(option);
+                }
+            }
+        }
+
+        function showAppointmentSlots() {
+            var department = document.getElementById("department").value;
+            var doctor = document.getElementById("doctor").value;
+            var selectedDate = document.getElementById("date").value;
+
+            if (department && doctor && selectedDate) {
+                var timeSlotsTable = document.getElementById("timeSlotsTable");
+                var timeSlotsBody = document.getElementById("timeSlotsBody");
+                timeSlotsBody.innerHTML = "";
+                var availableTimeSlots = generateRandomTimeSlots();
+                availableTimeSlots.forEach(function (slot, index) {
+                    var row = document.createElement("tr");
+                    var doctorCell = document.createElement("td");
+                    doctorCell.textContent = doctor;
+                    var slotCell = document.createElement("td");
+                    slotCell.textContent = slot;
+                    var confirmCell = document.createElement("td");
+                    var confirmCheckbox = document.createElement("input");
+                    confirmCheckbox.type = "checkbox";
+                    confirmCheckbox.setAttribute("data-index", index);
+                    confirmCheckbox.onclick = function () {
+                        disableOtherCheckboxes(confirmCheckbox);
+                    };
+                    confirmCell.appendChild(confirmCheckbox);
+                    row.appendChild(doctorCell);
+                    row.appendChild(slotCell);
+                    row.appendChild(confirmCell);
+                    timeSlotsBody.appendChild(row);
+                });
+
+                timeSlotsTable.style.display = "block";
+            }
+        }
+
+        function generateRandomTimeSlots() {
+            var availableTimeSlots = [];
+            for (var i = 0; i < 5; i++) {
+                var hour = Math.floor(Math.random() * 12) + 1;
+                var minute = Math.floor(Math.random() * 60);
+                var ampm = Math.random() < 0.5 ? "AM" : "PM";
+                var slot = hour.toString().padStart(2, "0") + ":" + minute.toString().padStart(2, "0") + " " + ampm;
+                availableTimeSlots.push(slot);
+            }
+            return availableTimeSlots;
+        }
+
+        function disableOtherCheckboxes(clickedCheckbox) {
+            var checkboxes = document.querySelectorAll("#timeSlotsBody input[type='checkbox']");
+            checkboxes.forEach(function (checkbox) {
+                if (checkbox !== clickedCheckbox) {
+                    checkbox.disabled = clickedCheckbox.checked;
+                }
+            });
+        }
+
+        function confirmAppointment() {
+            var checkboxes = document.querySelectorAll("#timeSlotsBody input[type='checkbox']:checked");
+            if (checkboxes.length > 0) {
+                var confirmedSlots = [];
+                checkboxes.forEach(function (checkbox) {
+                    var row = checkbox.parentElement.parentElement;
+                    var doctor = row.cells[0].textContent;
+                    var slot = row.cells[1].textContent;
+                    confirmedSlots.push({
+                        doctor: doctor,
+                        slot: slot,
+                    });
+                });
+                console.log(confirmedSlots);
+                alert("Appointments confirmed!");
+            } else {
+                alert("Please select at least one appointment to confirm.");
+            }
+        }
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/gsap.min.js"
+        integrity="sha512-EZI2cBcGPnmR89wTgVnN3602Yyi7muWo8y1B3a8WmIv1J9tYG+udH4LvmYjLiGp37yHB7FfaPBo8ly178m9g4Q=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        window.addEventListener("DOMContentLoaded", function () {
+            var cursor = document.getElementById('cursor');
+            window.addEventListener("mousemove", function (detail) {
+                gsap.to(cursor, { duration: 0.2, left: detail.clientX, top: detail.clientY, ease: "power2.out" });
+            });
+        });
+    </script>
+
+
+
+</body>
+
+</html>

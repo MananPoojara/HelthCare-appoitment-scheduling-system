@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link
+        href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSlpStGkXAn_9npMB4sNZIhsVWaxfCouRyDXtm0JHfbTV69iwJ1FxHMJKCG86Wsqivmyt0&usqp=CAU"
+        rel="icon">
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+    <link
+        href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+        rel="stylesheet">
+    <link href="assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+    <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet">
+</head>
+
+<body class="bg-light">
+    <div id="cursor"></div>
+
+    <div id="topbar" class="d-flex align-items-center fixed-top">
+        <div class="container d-flex align-items-center justify-content-center justify-content-md-between">
+            <div class="align-items-center d-none d-md-flex">
+                <i class="bi bi-clock"></i> Monday - Saturday, 8AM to 10PM
+            </div>
+            <div class="d-flex align-items-center">
+                <i class="bi bi-phone"></i> Call us now +91 1234567890
+            </div>
+        </div>
+    </div>
+
+    <header id="header" class="fixed-top mb-5">
+        <div class="container d-flex align-items-center">
+            <a href="index.html" class="logo me-auto "><img
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSlpStGkXAn_9npMB4sNZIhsVWaxfCouRyDXtm0JHfbTV69iwJ1FxHMJKCG86Wsqivmyt0&usqp=CAU"
+                    alt="error" width=" 130px" height="200px" class="img-fluid"></a>
+            <nav id="navbar" class="navbar order-last order-lg-0">
+                <ul>
+                    <li><a class="nav-link scrollto " href="index.html">Home</a></li>
+                </ul>
+                <i class="bi bi-list mobile-nav-toggle"></i>
+            </nav>
+            <a href="appoinment.html" class="appointment-btn scrollto"><span class="d-none d-md-inline">Make an</span>
+                Appointment</a>
+        </div>
+    </header>
+
+    <div class="container py-5">
+        <h1 class="text-center mb-4">Appointment Details</h1>
+        <div class="card">
+            <div class="card-body">
+                <div class="table-responsive" style="color: #3fbbc0;">
+                    <table class="table">
+                        <tbody>
+                            <tr>
+                                <th>Name:</th>
+                                <td id="name"></td>
+                            </tr>
+                            <tr>
+                                <th>Email:</th>
+                                <td id="email"></td>
+                            </tr>
+                            <tr>
+                                <th>Phone:</th>
+                                <td id="phone"></td>
+                            </tr>
+                            <tr>
+                                <th>Date:</th>
+                                <td id="date"></td>
+                            </tr>
+                            <tr>
+                                <th>Confirmed:</th>
+                                <td>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="confirmed" id="confirmedYes"
+                                            value="yes">
+                                        <label class="form-check-label" for="confirmedYes">Yes</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="confirmed" id="confirmedNo"
+                                            value="no">
+                                        <label class="form-check-label" for="confirmedNo">No</label>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    <button id="confirmationButton" class="appointment-btn scrollto"
+                                        onclick="sendConfirmationEmail()" disabled>Send Confirmation Email</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+    <script src="assets/vendor/aos/aos.js"></script>
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="assets/vendor/php-email-form/validate.js"></script>
+    <script src="assets/js/main.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const appointmentDataString = localStorage.getItem('appointmentData');
+            if (appointmentDataString) {
+                const appointmentData = JSON.parse(appointmentDataString);
+                displayAppointmentData(appointmentData);
+            }
+        });
+
+        function displayAppointmentData(appointmentData) {
+            document.getElementById('name').textContent = appointmentData.name;
+            document.getElementById('email').textContent = appointmentData.email;
+            document.getElementById('phone').textContent = appointmentData.phone;
+            document.getElementById('date').textContent = appointmentData.date;
+        }
+
+
+
+        function sendConfirmationEmail() {
+            const confirmedYes = document.getElementById('confirmedYes').checked;
+            const confirmedNo = document.getElementById('confirmedNo').checked;
+            const emailConfirm = document.getElementById('email').textContent;
+
+            let confirmationMessage;
+            if (confirmedYes) {
+                confirmationMessage = 'Your appointment is confirmed.';
+            } else if (confirmedNo) {
+                confirmationMessage = 'Your appointment is not confirmed.';
+            } else {
+                alert('Please select Yes or No for confirmation.');
+                return;
+            }
+
+            const email = emailConfirm;
+            const subject = 'Appointment Confirmation';
+            const body = confirmationMessage;
+
+            window.location.href = `mailto:${email}?subject=${subject}&body=${body}`;
+        }
+        const radioButtons = document.querySelectorAll('input[name="confirmed"]');
+        radioButtons.forEach(function (radio) {
+            radio.addEventListener('change', function () {
+                document.getElementById('confirmationButton').disabled = false;
+            });
+        });
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/gsap.min.js"
+        integrity="sha512-EZI2cBcGPnmR89wTgVnN3602Yyi7muWo8y1B3a8WmIv1J9tYG+udH4LvmYjLiGp37yHB7FfaPBo8ly178m9g4Q=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        window.addEventListener("DOMContentLoaded", function () {
+            var cursor = document.getElementById('cursor');
+            window.addEventListener("mousemove", function (detail) {
+                gsap.to(cursor, { duration: 0.2, left: detail.clientX, top: detail.clientY, ease: "power2.out" });
+            });
+        });
+    </script>
+</body>
+
+</html>
